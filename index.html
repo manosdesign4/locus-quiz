@@ -816,8 +816,55 @@ function submitEmail() {
   var email = document.getElementById('emailInput').value.trim();
   var name = document.getElementById('nameInput').value.trim();
   if (!email || !name) return;
-  console.log('Email captured:', email, name);
-  showResult();
+
+  var btn = document.getElementById('btnSubmitEmail');
+  btn.textContent = 'Αποστολή...';
+  btn.disabled = true;
+
+  // Calculate result to include in submission
+  var scores = calculateScores();
+  var result = getResults(scores);
+
+  // Send to Formspree
+  // ═══════════════════════════════════════════════════════
+  // SETUP: Replace YOUR_FORM_ID below with your actual Formspree form ID
+  // 1. Go to https://formspree.io → sign up free
+  // 2. Click "+ New Form" → name it "Locus Quiz"
+  // 3. Set recipient email to locusforinnovation@gmail.com
+  // 4. Copy the form ID (e.g., "xyzabcde") and paste below
+  // ═══════════════════════════════════════════════════════
+  var FORMSPREE_ID = 'xkoveqwz';
+
+  fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      _subject: 'Quiz: ' + result.primary.name + ' — ' + name,
+      archetype_primary: result.primary.name,
+      archetype_secondary: result.secondary.name,
+      is_dual_type: result.isDual,
+      score_SQ: result.allScores.SQ,
+      score_EN: result.allScores.EN,
+      score_KL: result.allScores.KL,
+      score_KO: result.allScores.KO,
+      score_AF: result.allScores.AF
+    })
+  })
+  .then(function(response) {
+    if (response.ok) {
+      console.log('Formspree: submission successful');
+    } else {
+      console.log('Formspree: submission failed', response.status);
+    }
+    showResult();
+  })
+  .catch(function(error) {
+    console.log('Formspree: network error', error);
+    // Still show results even if submission fails
+    showResult();
+  });
 }
 
 function validateEmailForm() {
@@ -933,6 +980,31 @@ function showResult() {
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
+}
+
+// ══════════════════════════════════════════════════════════
+// TEST MODE — type testResult('SQ') in browser console
+// Options: 'SQ', 'EN', 'KL', 'KO', 'AF'
+// Remove this function before final production launch
+// ══════════════════════════════════════════════════════════
+function testResult(code) {
+  var validCodes = ['SQ', 'EN', 'KL', 'KO', 'AF'];
+  if (validCodes.indexOf(code) === -1) {
+    console.log('Invalid code. Use: SQ, EN, KL, KO, AF');
+    return;
+  }
+  // Override calculateScores to force the selected archetype
+  var origCalc = calculateScores;
+  calculateScores = function() {
+    var scores = { SQ: 8, EN: 8, KL: 8, KO: 8, AF: 8 };
+    scores[code] = 42;
+    return scores;
+  };
+  document.getElementById('progressWrap').style.display = 'none';
+  showResult();
+  // Restore original
+  calculateScores = origCalc;
+  console.log('Showing result for: ' + ARCHETYPES[code].name);
 }
 </script>
 
