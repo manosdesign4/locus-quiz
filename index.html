@@ -20,7 +20,7 @@
     --amber: #CEB189;
     --teal: #58A998;
     --indigo: #2AA9E0;
-    --purple: #7B6BA1;
+    --purple: #4D60AA;
     --white: #FFFFFF;
     --font-body: 'DM Sans', sans-serif;
     --font-display: 'DM Serif Display', serif;
@@ -636,7 +636,7 @@ const ARCHETYPES = {
   },
   AF: {
     code: 'AF', name: 'Ο Αφανής', nameEn: 'The Invisible',
-    color: '#7B6BA1', tagline: 'Η δουλειά σου είναι εξαιρετική. Αλλά κανείς δεν το ξέρει.',
+    color: '#4D60AA', tagline: 'Η δουλειά σου είναι εξαιρετική. Αλλά κανείς δεν το ξέρει.',
     description: [
       'Η δουλειά σου είναι εξαιρετική. Το ξέρουν αυτοί που σε γνωρίζουν. Αλλά αυτοί είναι πάρα πολύ λίγοι. Εσύ αφιερώνεις τον χρόνο σου στη δημιουργία — στο χτίσιμο, στο μαγείρεμα, στο σχεδιασμό, στην εξυπηρέτηση. Αυτό αγαπάς. Αυτό ξέρεις.',
       'Και κάπου νιώθεις μια αδικία: ότι κάποιοι με κατώτερη ποιότητα πάνε καλύτερα, απλά επειδή μιλάνε πιο δυνατά. Αυτή η αίσθηση δεν είναι ματαιοδοξία — είναι μια πραγματικότητα της αγοράς. Η ποιότητα δεν μιλάει μόνη της. Ποτέ δεν μίλησε μόνη της.',
@@ -924,13 +924,21 @@ function showResult() {
       '<div class="cta-box">' +
         '<div class="cta-clarity-card" style="background:linear-gradient(135deg, ' + p.color + ' 0%, ' + p.color + 'CC 100%); border-radius:12px; padding:28px 24px; margin-bottom:24px; text-align:center;">' +
           '<div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:8px;">LOCUS DESIGN + INNOVATION</div>' +
-          '<div style="font-family:var(--font-display); font-size:28px; color:#fff; margin-bottom:4px;">Clarity Session</div>' +
+          '<div style="font-family:var(--font-display); font-size:28px; color:#fff; margin-bottom:4px;">Συνεδρία Σαφήνειας</div>' +
           '<div style="width:40px; height:2px; background:rgba(255,255,255,0.5); margin:12px auto;"></div>' +
           '<div style="font-size:13px; color:rgba(255,255,255,0.85); line-height:1.6;">Στρατηγική συζήτηση · Δια ζώσης ή online</div>' +
         '</div>' +
-        '<p>Ένα Clarity Session μαζί μας μπορεί να σε βοηθήσει να δεις ξεκάθαρα τι πρέπει να αλλάξει, τι πρέπει να σταματήσει, και ποιο είναι το πρώτο βήμα.</p>' +
-        '<p class="cta-details">90–120 λεπτά · €180 +ΦΠΑ · Δια ζώσης ή online<br><em>*Το κόστος αφαιρείται από κάθε μελλοντική συνεργασία.</em></p>' +
-        '<a href="mailto:locusforinnovation@gmail.com?subject=Clarity Session — ' + encodeURIComponent(p.name) + '" class="btn-primary" style="display:inline-block;text-decoration:none">Επικοινώνησε μαζί μας</a>' +
+        '<p>Μια Συνεδρία Σαφήνειας μαζί μας μπορεί να σε βοηθήσει να δεις ξεκάθαρα τι πρέπει να αλλάξει, τι πρέπει να σταματήσει, και ποιο είναι το πρώτο βήμα.</p>' +
+        '<a href="mailto:locusforinnovation@gmail.com?subject=Συνεδρία Σαφήνειας — ' + encodeURIComponent(p.name) + '" class="btn-primary" style="display:inline-block;text-decoration:none">Επικοινώνησε μαζί μας</a>' +
+      '</div>' +
+      '<div style="text-align:center; margin-top:40px; padding-top:32px; border-top:1px solid var(--light-grey);">' +
+        '<p style="font-size:15px; color:var(--icon-grey); margin-bottom:16px;">Ξέρεις κάποιον/α που θα τον ενδιέφερε να μάθει τον τύπο του;<br>Στείλε του το quiz.</p>' +
+        '<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">' +
+          '<a href="https://wa.me/?text=' + encodeURIComponent('Δοκίμασε αυτό το quiz — μου έδωσε μια ενδιαφέρουσα εικόνα για τον τύπο επιχειρηματία που είμαι. https://quiz.locus-consulting.com') + '" target="_blank" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#25D366; color:#fff; border-radius:6px; font-size:13px; font-weight:600; text-decoration:none;">WhatsApp</a>' +
+          '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://quiz.locus-consulting.com') + '&quote=' + encodeURIComponent('Δοκίμασε αυτό το quiz — μου έδωσε μια ενδιαφέρουσα εικόνα για τον τύπο επιχειρηματία που είμαι.') + '" target="_blank" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#1877F2; color:#fff; border-radius:6px; font-size:13px; font-weight:600; text-decoration:none;">Facebook</a>' +
+          '<a href="viber://forward?text=' + encodeURIComponent('Δοκίμασε αυτό το quiz — μου έδωσε μια ενδιαφέρουσα εικόνα για τον τύπο επιχειρηματία που είμαι. https://quiz.locus-consulting.com') + '" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#7360F2; color:#fff; border-radius:6px; font-size:13px; font-weight:600; text-decoration:none;">Viber</a>' +
+          '<button onclick="navigator.clipboard.writeText(\'https://quiz.locus-consulting.com\').then(function(){this.textContent=\'Αντιγράφηκε!\';var b=this;setTimeout(function(){b.textContent=\'Αντιγραφή link\'},2000)}.bind(this))" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:var(--near-white); color:var(--charcoal); border:1px solid var(--light-grey); border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font-body);">Αντιγραφή link</button>' +
+        '</div>' +
       '</div>' +
     '</div>';
 
