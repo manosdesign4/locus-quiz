@@ -101,36 +101,36 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 24px 24px 40px;
+    padding: 32px 24px;
     text-align: center;
   }
   .cover-number {
     font-family: var(--font-display);
-    font-size: clamp(48px, 12vw, 72px);
+    font-size: clamp(56px, 14vw, 90px);
     color: var(--sky-blue);
     line-height: 1;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .cover-title {
     font-family: var(--font-display);
-    font-size: clamp(24px, 5vw, 34px);
+    font-size: clamp(24px, 5vw, 36px);
     color: var(--charcoal);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   .cover-subtitle {
-    font-size: clamp(14px, 2.5vw, 16px);
+    font-size: clamp(15px, 3vw, 18px);
     color: var(--icon-grey);
-    max-width: 520px;
-    line-height: 1.5;
-    margin-bottom: 14px;
+    max-width: 420px;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
   .cover-meta {
     font-size: 13px;
     color: var(--icon-grey);
-    max-width: 560px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    opacity: 0.7;
+    max-width: 360px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    opacity: 0.75;
   }
 
   /* ── Buttons ── */
@@ -505,6 +505,11 @@
   <img src="logo.png" alt="Locus Design + Innovation" class="topbar-img">
 </div>
 
+<!-- Archetype Banner -->
+<div id="archetypeBanner" style="width:100%; overflow:hidden; line-height:0;">
+  <img src="archetypes_banner.jpg" alt="" style="width:100%; height:auto; display:block;">
+</div>
+
 <!-- Progress Bar -->
 <div class="progress-wrap" id="progressWrap" style="display:none;">
   <div class="progress-bar" id="progressBar" style="width:0%"></div>
@@ -516,10 +521,13 @@
   <div class="cover">
     <div class="cover-number">?</div>
     <div class="cover-title">Τι Τύπος Επιχειρηματία Είσαι;</div>
-    <div class="cover-subtitle">15 ερωτήσεις · 7 λεπτά<br>Ένα αποτέλεσμα που αλλάζει τον τρόπο<br>που βλέπεις την επιχείρησή σου</div>
-    <div style="font-size:14px; color:var(--charcoal); max-width:520px; line-height:1.6; margin-bottom:12px; font-style:italic; opacity:0.85;">Αυτό το τεστ είναι για επιχειρηματίες που νιώθουν ότι κάτι πρέπει να αλλάξει — αλλά δεν είναι σίγουροι τι.</div>
+    <div class="cover-subtitle">15 ερωτήσεις · 10 λεπτά · Ένα αποτέλεσμα που αλλάζει τον τρόπο που βλέπεις την επιχείρησή σου</div>
+    <div style="font-size:14px; color:var(--charcoal); max-width:400px; line-height:1.7; margin-bottom:16px; font-style:italic; opacity:0.85;">Αυτό το τεστ είναι για επιχειρηματίες που νιώθουν ότι κάτι πρέπει να αλλάξει — αλλά δεν είναι σίγουροι τι.</div>
     <div class="cover-meta">
-      Σε κάθε ερώτηση μπορεί να αναγνωρίζεις τον εαυτό σου σε πολλές απαντήσεις<br><strong>— αλλά αν πρέπει να διαλέξεις μόνο μία, ποια σε περιγράφει πιο πολύ;</strong><br>Αυτή η επιλογή είναι το πιο ενδιαφέρον μέρος.
+      Σε κάθε ερώτηση μπορεί να αναγνωρίζεις τον εαυτό σου<br>
+      σε πολλές απαντήσεις — <strong>αλλά αν πρέπει να διαλέξεις<br>
+      μόνο μία, ποια σε περιγράφει πιο πολύ;</strong><br>
+      Αυτή η επιλογή είναι το πιο ενδιαφέρον μέρος.
     </div>
     <button class="btn-primary" onclick="startQuiz()">Ξεκίνα</button>
   </div>
@@ -585,6 +593,7 @@ const ARCHETYPES = {
     ],
     strength: 'Έχεις εμπειρία, πελατειακή βάση, και αποδεδειγμένη ικανότητα. Αυτά δεν χτίζονται σε μια μέρα. Χρειάζεσαι μια νέα οπτική — όχι μια νέα αρχή.',
     question: 'Παίζω στο σωστό παιχνίδι — ή απλά παίζω πιο σκληρά στο λάθος;',
+    signs: 'Δες τους τελευταίους 3-6 μήνες. Ο μέσος όρος συναλλαγών μειώθηκε; Οι σταθεροί πελάτες έρχονται πιο αραιά; Οι μέρες αιχμής της εβδομάδας άλλαξαν; Αν κάτι άλλαξε χωρίς όμως να αλλάξεις κάτι εσύ — τα σημάδια υπάρχουν ήδη.',
     cta: 'Ένα Clarity Session σε βοηθάει να δεις το ανταγωνιστικό τοπίο από ψηλά — και να βρεις πού πραγματικά βρίσκεται το πλεονέκτημά σου.'
   },
   EN: {
@@ -597,6 +606,7 @@ const ARCHETYPES = {
     ],
     strength: 'Η δημιουργική σου ενέργεια είναι σπάνια. Οι περισσότεροι δεν μπορούν καν να δουν ευκαιρίες — εσύ βλέπεις δέκα. Χρειάζεσαι ένα φίλτρο, όχι ένα φρένο.',
     question: 'Αυτό είναι μια επιχείρηση — ή ένα project για το οποίο ενθουσιάζομαι αυτή τη στιγμή;',
+    signs: 'Πόσα projects ξεκίνησες τον τελευταίο χρόνο και πόσα ολοκλήρωσες; Πόσες ιδέες έγιναν έσοδα; Αν η ενέργεια σου ρέει παντού αλλά τα αποτελέσματα δεν ακολουθούν — το πρόβλημα δεν είναι οι ιδέες αλλά ο τρόπος που τα δομείς.',
     cta: 'Ένα Clarity Session σε βοηθάει να βάλεις δομή στις ιδέες σου — χωρίς να σβήσει την ενέργεια που σε κινεί.'
   },
   KL: {
@@ -609,6 +619,7 @@ const ARCHETYPES = {
     ],
     strength: 'Η ικανότητά σου να βλέπεις και τις δύο πλευρές — τι πρέπει να μείνει και τι πρέπει να αλλάξει — είναι σπάνια. Δεν χρειάζεσαι θάρρος. Χρειάζεσαι χώρο να μιλήσεις ανοιχτά.',
     question: 'Τι χρειάζεται αυτή η επιχείρηση να γίνει — ανεξάρτητα από αυτό που ήταν;',
+    signs: 'Πόσο χρόνο ξοδεύεις σε εσωτερικές συζητήσεις σε σχέση με την δουλειά που βλέπει ο πελάτης; Πόσες αποφάσεις πήρες τον τελευταίο μήνα χωρίς να ρωτήσεις κανέναν; Αν ο αριθμός είναι κοντά στο μηδέν — η επιχείρηση κινείται με ταχύτητα συναίνεσης, όχι αγοράς.',
     cta: 'Ένα Clarity Session σου δίνει ένα ουδέτερο χώρο να σκεφτείς τι πραγματικά χρειάζεται η επιχείρηση — μακριά από τις πιέσεις της οικογένειας.'
   },
   KO: {
@@ -621,6 +632,7 @@ const ARCHETYPES = {
     ],
     strength: 'Έχεις πόρους, εμπειρία, και αποδεδειγμένη ικανότητα. Τα εργαλεία υπάρχουν — χρειάζεσαι ξεκαθάρισμα, όχι κάτι καινούριο.',
     question: 'Τι κρατάω που στην πραγματικότητα με κρατάει πίσω;',
+    signs: 'Υπάρχει κάτι στη λίστα σου εδώ και μήνες που συνεχώς μετακινείται για την επόμενη εβδομάδα; Πότε ήταν η τελευταία φορά που κοίταξες τα περιθώρια κέρδους σου; Αν δεν θυμάσαι — αυτό δεν είναι αμέλεια, είναι αποφυγή. Και η αποφυγή έχει κόστος που μεγαλώνει σιωπηλά.',
     cta: 'Ένα Clarity Session σε βοηθάει να δεις ξεκάθαρα τι πρέπει να αλλάξει, τι πρέπει να σταματήσει, και ποιο είναι το πρώτο βήμα.'
   },
   AF: {
@@ -633,6 +645,7 @@ const ARCHETYPES = {
     ],
     strength: 'Η αφοσίωσή σου στην ποιότητα και στην τέχνη σου είναι η πιο σταθερή βάση που μπορεί να έχει μια επιχείρηση. Δεν χρειάζεσαι περισσότερο marketing — χρειάζεσαι τον σωστό τρόπο να γίνεις ορατός χωρίς να χάσεις αυτό που είσαι.',
     question: 'Αν κανείς δεν βλέπει αυτό που κάνω, έχει σημασία πόσο καλό είναι;',
+    signs: 'Πόσοι νέοι πελάτες ήρθαν τον τελευταίο μήνα χωρίς σύσταση; Αν αναζητήσει κάποιος αυτό που κάνεις στο Google, σε βρίσκει; Αν οι περισσότεροι πελάτες σου έρχονται από στόμα-σε-στόμα — η δουλειά σου είναι εξαιρετική, αλλά η προβολή σου εξαρτάται από την τύχη.',
     cta: 'Ένα Clarity Session δεν θα σε κάνει influencer. Θα σε βοηθήσει να βρεις τρόπο να γίνεις ορατός που ταιριάζει σε αυτό που είσαι.'
   }
 };
@@ -640,57 +653,57 @@ const ARCHETYPES = {
 // v2 QUESTIONS — updated Q2-E, Q3-D, Q4-D, Q5-E, Q6-D
 const QUESTIONS = [
   { text: 'Ξεκινάει η εβδομάδα. Τι σε απασχολεί περισσότερο;', options: [
-    { text: 'Τι κάνει ο ανταγωνισμός και πώς θα απαντήσω', primary: 'SQ', secondary: ['KO'] },
+    { text: 'Γιατί ο κόσμος επιλέγει να πάει αλλού ενώ εγώ προσφέρω περισσότερα', primary: 'SQ', secondary: ['KO'] },
     { text: 'Ποια νέα ιδέα θα δοκιμάσω αυτή τη βδομάδα', primary: 'EN', secondary: [] },
-    { text: 'Πώς θα κρατήσω τις ισορροπίες στην οικογένεια/ομάδα', primary: 'KL', secondary: ['KO'] },
+    { text: 'Τι θα πει ο πατέρας/η μάνα μου αν κάνω αυτό που πιστεύω ότι πρέπει', primary: 'KL', secondary: ['KO'] },
     { text: 'Ξέρω τι πρέπει να κάνω αλλά δεν ξέρω από πού να αρχίσω', primary: 'KO', secondary: ['SQ'] },
-    { text: 'Πώς θα προλάβω να τελειώσω τη δουλειά μου — τα υπόλοιπα ας περιμένουν', primary: 'AF', secondary: ['SQ'] }
+    { text: 'Πώς θα τελειώσω αυτά που έχω αναλάβει — τα υπόλοιπα μπορούν να περιμένουν', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Ένας νέος ανταγωνιστής ανοίγει κοντά σου. Ποια είναι η πρώτη σου αντίδραση;', options: [
-    { text: 'Πρέπει να δω τι κάνει και να απαντήσω αμέσως', primary: 'SQ', secondary: ['EN'] },
+    { text: 'Πάω να δω ή μαθαίνω από άλλους τι προσφέρει, τι τιμές έχει, τι κάνει διαφορετικά — πρέπει να αντιδράσω', primary: 'SQ', secondary: ['EN'] },
     { text: 'Ωραία, θα μας κρατήσει σε εγρήγορση — ας κάνουμε κάτι καινούριο', primary: 'EN', secondary: ['SQ'] },
-    { text: 'Ανησυχώ, αλλά δεν μπορώ να κάνω δραστικές αλλαγές χωρίς τη σύμφωνη γνώμη όλων', primary: 'KL', secondary: ['KO'] },
-    { text: 'Ξέρω ότι πρέπει να αντιδράσω αλλά δεν ξέρω πώς — θα το σκεφτώ', primary: 'KO', secondary: ['SQ'] },
+    { text: 'Ανησυχώ — αλλά δεν μπορώ να αλλάξω τίποτα χωρίς να κάτσω πρώτα να το συζητήσω με τους υπόλοιπους', primary: 'KL', secondary: ['KO'] },
+    { text: 'Ξέρω ότι πρέπει να κάνω κάτι αλλά δεν ξέρω τι — θα το σκεφτώ και βλέπουμε', primary: 'KO', secondary: ['SQ'] },
     { text: 'Η δουλειά μου μιλάει μόνη της — δεν ασχολούμαι ιδιαίτερα με το τι κάνει ο ανταγωνισμός', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Πώς μαθαίνεις τι θέλουν πραγματικά οι πελάτες σου;', options: [
-    { text: 'Κοιτάω τι αγοράζουν και τι κάνει ο ανταγωνισμός', primary: 'SQ', secondary: ['AF'] },
+    { text: 'Κοιτάω τα νούμερα — τι πουλάει, τι δεν πουλάει, τι κάνει ο ανταγωνισμός', primary: 'SQ', secondary: ['AF'] },
     { text: 'Ρωτάω, δοκιμάζω, πειραματίζομαι — βλέπω τι κολλάει', primary: 'EN', secondary: ['AF'] },
-    { text: 'Οι μόνιμοι πελάτες μας ξέρουν — αλλά δεν ξέρω αν αλλάζουν οι ανάγκες τους', primary: 'KL', secondary: ['SQ'] },
-    { text: 'Δεν ρωτάω συστηματικά — και ξέρω ότι αυτό είναι πρόβλημα, αλλά δεν γνωρίζω τον τρόπο να το κάνω', primary: 'KO', secondary: ['AF'] },
+    { text: 'Έχουμε τους πελάτες μας χρόνια — αλλά δεν ξέρω αν αυτό που θέλουν σήμερα είναι αυτό που τους δίνουμε', primary: 'KL', secondary: ['SQ'] },
+    { text: 'Δεν έχω κάποιο τρόπο να μαθαίνω — ελπίζω ότι θα μου το πουν αν κάτι δεν πάει καλά', primary: 'KO', secondary: ['AF'] },
     { text: 'Ξέρω ότι αυτό που κάνω είναι καλό — αρκεί να το βρουν', primary: 'AF', secondary: ['KO'] }
   ]},
   { text: 'Πρέπει να πάρεις μια σημαντική απόφαση. Πώς τη χειρίζεσαι;', options: [
-    { text: 'Γρήγορα — δεν υπάρχει χρόνος, πρέπει να κινηθώ πριν τον ανταγωνισμό', primary: 'SQ', secondary: ['EN'] },
+    { text: 'Γρήγορα — αν δεν κινηθώ τώρα, κάποιος άλλος θα το κάνει πρώτος', primary: 'SQ', secondary: ['EN'] },
     { text: 'Με ένστικτο — εμπιστεύομαι τη διαίσθησή μου', primary: 'EN', secondary: ['AF'] },
-    { text: 'Με προσοχή — πρέπει να ακούσω όλες τις πλευρές πρώτα', primary: 'KL', secondary: ['KO'] },
+    { text: 'Με προσοχή — πρέπει να ακούσω τι λένε οι υπόλοιποι πριν προχωρήσω', primary: 'KL', secondary: ['KO'] },
     { text: 'Την αναβάλλω — πάντα κάτι "λείπει" πριν νιώσω έτοιμος/η', primary: 'KO', secondary: ['KL'] },
     { text: 'Αν αφορά τη δουλειά μου, αποφασίζω εγώ — αν αφορά marketing ή στρατηγική, δεν ξέρω από πού να αρχίσω', primary: 'AF', secondary: ['KO'] }
   ]},
   { text: 'Πώς περνάς τις περισσότερες ώρες σου στη δουλειά;', options: [
     { text: 'Τρέχω — πελάτες, παραγγελίες, θέματα που δεν μπορώ να αφήσω σε κανέναν', primary: 'SQ', secondary: ['AF'] },
     { text: 'Σχεδιάζω νέα πράγματα, ψάχνω ιδέες, μιλάω με ανθρώπους για πιθανές συνεργασίες', primary: 'EN', secondary: [] },
-    { text: 'Συντονίζω, εξηγώ, πείθω — πολύς χρόνος σε εσωτερική επικοινωνία', primary: 'KL', secondary: ['KO'] },
-    { text: 'Ασχολούμαι με τα τρέχοντα αλλά αποφεύγω τα θέματα που πραγματικά χρειάζονται προσοχή', primary: 'KO', secondary: ['SQ'] },
-    { text: 'Κάνω την δουλειά μου — παράγω, φτιάχνω, σχεδιάζω. Marketing και προβολή μπαίνουν σε δεύτερη μοίρα', primary: 'AF', secondary: ['SQ'] }
+    { text: 'Συντονίζω, εξηγώ, πείθω — πολύς χρόνος σε συζητήσεις που δεν έπρεπε να χρειάζονται', primary: 'KL', secondary: ['KO'] },
+    { text: 'Τρέχω τα τρέχοντα — στο τέλος της μέρας δεν ξέρω όμως αν έχω ασχοληθεί με αυτά που πραγματικά μετράνε', primary: 'KO', secondary: ['SQ'] },
+    { text: 'Κάνω τη δουλειά μου — παράγω, φτιάχνω, σχεδιάζω. Marketing και προβολή μπαίνουν σε δεύτερη μοίρα', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Τι σε δυσκολεύει περισσότερο με την ομάδα ή τους συνεργάτες σου;', options: [
     { text: 'Δεν κάνουν αρκετά — πρέπει να τα κάνω όλα μόνος/η μου', primary: 'SQ', secondary: ['AF'] },
-    { text: 'Δεν ακολουθούν τον ρυθμό μου — αλλάζω κατεύθυνση και χάνονται', primary: 'EN', secondary: ['KO'] },
+    { text: 'Δεν ακολουθούν τον ρυθμό μου — μέχρι να καταλάβουν τι θέλω, εγώ έχω πάει παρακάτω', primary: 'EN', secondary: ['KO'] },
     { text: 'Υπάρχουν "στρατόπεδα" — κάποιοι θέλουν αλλαγή, κάποιοι αντιστέκονται', primary: 'KL', secondary: ['KO'] },
-    { text: 'Ξέρουν τι πρέπει να γίνει αλλά κανείς δεν παίρνει ξεκάθαρη πρωτοβουλία', primary: 'KO', secondary: ['KL'] },
+    { text: 'Ξέρουν τι πρέπει να γίνει αλλά κανείς δεν παίρνει πρωτοβουλία', primary: 'KO', secondary: ['KL'] },
     { text: 'Δεν έχω πραγματική ομάδα — δουλεύω κυρίως μόνος/η', primary: 'AF', secondary: ['EN'] }
   ]},
   { text: 'Πώς νιώθεις για την τιμολόγησή σου;', options: [
-    { text: 'Πιέζομαι να κατεβάσω τις τιμές γιατί ο ανταγωνισμός είναι φθηνότερος', primary: 'SQ', secondary: ['AF'] },
+    { text: 'Τα κόστη μου ανεβαίνουν αλλά δεν αυξάνω τιμές — φοβάμαι ότι θα φύγουν στον ανταγωνισμό', primary: 'SQ', secondary: ['AF'] },
     { text: 'Δεν έχω σταθερή τιμολόγηση — αλλάζει ανάλογα με το project', primary: 'EN', secondary: ['AF'] },
-    { text: 'Οι τιμές είναι αυτές που ήταν πάντα — δύσκολο να τις αλλάξω χωρίς αντιδράσεις', primary: 'KL', secondary: ['KO'] },
-    { text: 'Ξέρω ότι πρέπει να αναθεωρήσω αλλά δεν ξέρω πώς να αξιολογήσω τι αξίζω πραγματικά', primary: 'KO', secondary: ['AF'] },
-    { text: 'Νιώθω ότι χρεώνω λίγα αλλά δεν ξέρω πώς να δικαιολογήσω περισσότερα', primary: 'AF', secondary: ['SQ'] }
+    { text: 'Οι τιμές είναι αυτές που ήταν πάντα — αν τις πειράξω θα τα ακούσω από τους άλλους μέσα στην επιχείρηση', primary: 'KL', secondary: ['KO'] },
+    { text: 'Δεν θυμάμαι πότε κοίταξα τελευταία φορά αν βγαίνω — απλά συνεχίζω', primary: 'KO', secondary: ['AF'] },
+    { text: 'Ξέρω ότι η δουλειά μου αξίζει περισσότερα απ\' όσα χρεώνω — αλλά δεν ξέρω πώς να το πω', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Σου παρουσιάζεται μια νέα ευκαιρία. Τι κάνεις;', options: [
-    { text: 'Την εξετάζω αμέσως — δεν μπορώ να χάσω χρόνο, ο ανταγωνισμός κινείται', primary: 'SQ', secondary: ['EN'] },
-    { text: 'Ναι την τρέχω άμεσα! Θα δούμε τις λεπτομέρειες στην πορεία', primary: 'EN', secondary: ['SQ'] },
+    { text: 'Την εξετάζω αμέσως — αν δεν κινηθώ εγώ, φοβάμαι ότι θα την εκμεταλλευτεί κάποιος άλλος', primary: 'SQ', secondary: ['EN'] },
+    { text: 'Ναι, την τρέχω άμεσα! Θα δούμε τις λεπτομέρειες στην πορεία', primary: 'EN', secondary: ['SQ'] },
     { text: 'Θα ήθελα να την κυνηγήσω, αλλά πρέπει πρώτα να πείσω τους υπόλοιπους', primary: 'KL', secondary: ['KO'] },
     { text: 'Το σκέφτομαι πολύ, ζυγίζω τα υπέρ και τα κατά — και συνήθως αποφασίζω αργά ή καθόλου', primary: 'KO', secondary: ['KL'] },
     { text: 'Αν αφορά αυτό που κάνω, ναι, την κυνηγάω. Αν αφορά κάτι εκτός τεχνογνωσίας μου, πιθανόν όχι', primary: 'AF', secondary: ['KO'] }
@@ -703,45 +716,45 @@ const QUESTIONS = [
     { text: '"Φανταστική ποιότητα — κρίμα που δεν τους ξέρει κανείς"', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Τι σκέψη σε ξυπνάει στις 3 τα ξημερώματα;', options: [
-    { text: '"Χάνω έδαφος και δεν ξέρω πώς να το σταματήσω"', primary: 'SQ', secondary: ['KO'] },
-    { text: '"Μήπως πρέπει να αλλάξω εντελώς κατεύθυνση;"', primary: 'EN', secondary: ['KO'] },
-    { text: '"Πώς θα πω αυτό που πρέπει χωρίς να χαλάσω τις σχέσεις;"', primary: 'KL', secondary: [] },
-    { text: '"Γιατί δεν μπορώ απλά να προχωρήσω;"', primary: 'KO', secondary: ['SQ'] },
-    { text: '"Γιατί δεν αναγνωρίζουν αυτό που κάνω;"', primary: 'AF', secondary: ['SQ'] }
+    { text: '"Ο κόσμος επιλέγει να πάει αλλού — και δεν καταλαβαίνω γιατί"', primary: 'SQ', secondary: ['KO'] },
+    { text: '"Μήπως αυτό που φτιάχνω δεν θα δουλέψει — και πρέπει να ξεκινήσω από την αρχή;"', primary: 'EN', secondary: ['KO'] },
+    { text: '"Πώς θα πω αυτό που αισθάνομαι ότι πρέπει να γίνει χωρίς να δημιουργήσω τριβές;"', primary: 'KL', secondary: [] },
+    { text: '"Πάλι πέρασε μια μέρα/εβδομάδα/μήνας και δεν έκανα αυτό που έπρεπε"', primary: 'KO', secondary: ['SQ'] },
+    { text: '"Κάνω τόσο καλή δουλειά — γιατί κανείς δεν το βλέπει;"', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Πώς αντιμετωπίζεις την αλλαγή;', options: [
     { text: 'Αλλάζω μόνο αν πιεστώ — προτιμώ να βελτιώσω αυτό που κάνω ήδη', primary: 'SQ', secondary: ['AF'] },
     { text: 'Αγαπώ την αλλαγή — μερικές φορές ίσως υπερβολικά', primary: 'EN', secondary: [] },
-    { text: 'Πιστεύω στην αλλαγή, αλλά πρέπει να γίνει σταδιακά και με συναίνεση', primary: 'KL', secondary: ['KO'] },
-    { text: 'Θέλω αλλαγή αλλά πάντα κάτι με κρατάει πίσω', primary: 'KO', secondary: ['KL'] },
-    { text: 'Θα άλλαζα αυτό που φτιάχνω/προσφέρω — αλλά δεν θα γίνω κάτι που δεν είμαι', primary: 'AF', secondary: ['SQ'] }
+    { text: 'Πιστεύω στην αλλαγή — αλλά εδώ μέσα τίποτα δεν αλλάζει αν δεν συμφωνήσουν όλοι', primary: 'KL', secondary: ['KO'] },
+    { text: 'Γνωρίζω ότι χρειάζομαι να αλλάξω κάποια πράγματα αλλά κάθε φορά που πάω να ξεκινήσω, κάτι με σταματάει', primary: 'KO', secondary: ['KL'] },
+    { text: 'Θα αλλάξω αυτό που φτιάχνω/προσφέρω — αλλά δεν θα γίνω κάτι που δεν είμαι', primary: 'AF', secondary: ['SQ'] }
   ]},
   { text: 'Αν ζητούσες βοήθεια (υποθετικά!), τι θα ήθελες;', options: [
-    { text: 'Κάποιον να μου δείξει γιατί χάνω πελάτες και πώς να τους πάρω πίσω', primary: 'SQ', secondary: [] },
+    { text: 'Κάποιον να μου δείξει γιατί χάνω πελάτες και πώς να τους κερδίσω πίσω', primary: 'SQ', secondary: [] },
     { text: 'Κάποιον να με βοηθήσει να βάλω τάξη στις ιδέες μου και να φτιάξω ένα σχέδιο', primary: 'EN', secondary: ['KO'] },
     { text: 'Κάποιον τρίτο — ουδέτερο — να διευκολύνει μια δύσκολη συζήτηση', primary: 'KL', secondary: [] },
-    { text: 'Κάποιον να με ξεκολλήσει — να μου δείξει τι δεν βλέπω', primary: 'KO', secondary: ['SQ'] },
-    { text: 'Κάποιον να με βοηθήσει να δείξω στον κόσμο αυτό που κάνω, χωρίς να νιώθω ότι πουλάω', primary: 'AF', secondary: ['EN'] }
+    { text: 'Κάποιον να με ξεκολλήσει — να μου δείξει από πού να αρχίσω', primary: 'KO', secondary: ['SQ'] },
+    { text: 'Κάποιον να με βοηθήσει να δείξω στον κόσμο αυτό που κάνω — χωρίς να νιώθω ότι προσπαθώ να πουλήσω', primary: 'AF', secondary: ['EN'] }
   ]},
   { text: 'Πότε θα ένιωθες ότι η επιχείρησή σου πετυχαίνει;', options: [
-    { text: 'Όταν σταματήσω να ανησυχώ για τον ανταγωνισμό', primary: 'SQ', secondary: ['KO'] },
+    { text: 'Όταν οι πελάτες μου με επιλέγουν χωρίς να με επηρεάζει η σύγκριση με άλλους', primary: 'SQ', secondary: ['KO'] },
     { text: 'Όταν δω μια ιδέα μου να γίνεται πραγματικότητα σε μεγάλη κλίμακα', primary: 'EN', secondary: ['AF'] },
     { text: 'Όταν η επιχείρηση τρέχει ομαλά χωρίς εμένα να σβήνω φωτιές κάθε μέρα', primary: 'KL', secondary: ['KO'] },
-    { text: 'Όταν πάρω επιτέλους μια απόφαση και δω αποτελέσματα', primary: 'KO', secondary: ['EN'] },
+    { text: 'Όταν ξυπνήσω μια μέρα και ξέρω ακριβώς τι πρέπει να κάνω — και επιτέλους το κάνω', primary: 'KO', secondary: ['EN'] },
     { text: 'Όταν αναγνωρίσουν την αξία αυτού που κάνω χωρίς να χρειαστεί να φωνάξω', primary: 'AF', secondary: ['KL'] }
   ]},
   { text: 'Ποιο από τα παρακάτω σε περιγράφει καλύτερα;', options: [
     { text: 'Δουλεύω σκληρά αλλά νιώθω ότι τρέχω σε διάδρομο γυμναστηρίου — κίνηση χωρίς πρόοδο', primary: 'SQ', secondary: ['KO'] },
     { text: 'Έχω 10 ιδέες τη μέρα αλλά εκτελώ μισή', primary: 'EN', secondary: ['AF'] },
     { text: 'Βλέπω τι πρέπει να γίνει αλλά δεν είμαι ελεύθερος/η να το κάνω', primary: 'KL', secondary: ['KO'] },
-    { text: 'Ξέρω ότι κάτι δεν πάει καλά αλλά δεν μπορώ να παρέμβω στο πρόβλημα', primary: 'KO', secondary: ['SQ'] },
+    { text: 'Ξέρω ότι κάτι δεν πάει καλά αλλά δεν μπορώ να εντοπίσω τι ακριβώς', primary: 'KO', secondary: ['SQ'] },
     { text: 'Αυτό που κάνω είναι εξαιρετικό — αυτό που λείπει είναι ο κόσμος να το μάθει', primary: 'AF', secondary: [] }
   ]},
   { text: 'Αν μπορούσες να αλλάξεις ένα πράγμα στην επιχείρησή σου αύριο, ποιο θα ήταν;', options: [
-    { text: 'Να ξεχωρίζω ξεκάθαρα από τον ανταγωνισμό', primary: 'SQ', secondary: ['AF'] },
+    { text: 'Να καταλαβαίνει ο κόσμος γιατί αξίζει να έρθει σε μένα και όχι κάπου αλλού', primary: 'SQ', secondary: ['AF'] },
     { text: 'Να μετατρέψω τις ιδέες μου σε κάτι οργανωμένο και βιώσιμο', primary: 'EN', secondary: ['KO'] },
     { text: 'Να μπορώ να αποφασίσω χωρίς να χρειάζεται η έγκριση 5 ανθρώπων', primary: 'KL', secondary: ['KO'] },
-    { text: 'Να δω ξεκάθαρα τι πρέπει να κάνω — και να το κάνω επιτέλους', primary: 'KO', secondary: ['EN'] },
+    { text: 'Να ξυπνήσω αύριο με ένα ξεκάθαρο σχέδιο — και να αρχίσω επιτέλως', primary: 'KO', secondary: ['EN'] },
     { text: 'Να μάθει ο κόσμος τι κάνω χωρίς να πρέπει να γίνω influencer', primary: 'AF', secondary: ['SQ'] }
   ]}
 ];
@@ -754,6 +767,7 @@ let currentQ = 0;
 let answers = new Array(QUESTIONS.length).fill(null);
 
 function startQuiz() {
+  document.getElementById('archetypeBanner').style.display = 'none';
   showScreen('screen-questions');
   document.getElementById('progressWrap').style.display = 'block';
   renderQuestion();
@@ -816,55 +830,8 @@ function submitEmail() {
   var email = document.getElementById('emailInput').value.trim();
   var name = document.getElementById('nameInput').value.trim();
   if (!email || !name) return;
-
-  var btn = document.getElementById('btnSubmitEmail');
-  btn.textContent = 'Αποστολή...';
-  btn.disabled = true;
-
-  // Calculate result to include in submission
-  var scores = calculateScores();
-  var result = getResults(scores);
-
-  // Send to Formspree
-  // ═══════════════════════════════════════════════════════
-  // SETUP: Replace YOUR_FORM_ID below with your actual Formspree form ID
-  // 1. Go to https://formspree.io → sign up free
-  // 2. Click "+ New Form" → name it "Locus Quiz"
-  // 3. Set recipient email to locusforinnovation@gmail.com
-  // 4. Copy the form ID (e.g., "xyzabcde") and paste below
-  // ═══════════════════════════════════════════════════════
-  var FORMSPREE_ID = 'xkoveqwz';
-
-  fetch('https://formspree.io/f/' + FORMSPREE_ID, {
-    method: 'POST',
-    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: name,
-      email: email,
-      _subject: 'Quiz: ' + result.primary.name + ' — ' + name,
-      archetype_primary: result.primary.name,
-      archetype_secondary: result.secondary.name,
-      is_dual_type: result.isDual,
-      score_SQ: result.allScores.SQ,
-      score_EN: result.allScores.EN,
-      score_KL: result.allScores.KL,
-      score_KO: result.allScores.KO,
-      score_AF: result.allScores.AF
-    })
-  })
-  .then(function(response) {
-    if (response.ok) {
-      console.log('Formspree: submission successful');
-    } else {
-      console.log('Formspree: submission failed', response.status);
-    }
-    showResult();
-  })
-  .catch(function(error) {
-    console.log('Formspree: network error', error);
-    // Still show results even if submission fails
-    showResult();
-  });
+  console.log('Email captured:', email, name);
+  showResult();
 }
 
 function validateEmailForm() {
@@ -953,6 +920,7 @@ function showResult() {
       '</div>' +
       '<div class="result-section"><h3 style="color:' + p.color + '">Η δύναμη αυτού του τύπου</h3><p>' + p.strength + '</p></div>' +
       '<div class="result-question-box" style="border-left-color:' + p.color + '"><p>' + p.question + '</p></div>' +
+      '<div class="result-section" style="background:' + p.color + '0D; border-radius:8px; padding:20px 24px; margin-top:24px;"><h3 style="color:' + p.color + '; font-size:15px; margin-bottom:8px;">Σημάδια που ίσως δεν πρόσεξες</h3><p style="font-size:14px; line-height:1.7; color:var(--charcoal);">' + p.signs + '</p></div>' +
       secondaryHTML +
       '<div class="cta-box">' +
         '<div class="cta-clarity-card" style="background:linear-gradient(135deg, ' + p.color + ' 0%, ' + p.color + 'CC 100%); border-radius:12px; padding:28px 24px; margin-bottom:24px; text-align:center;">' +
@@ -980,31 +948,6 @@ function showResult() {
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
-}
-
-// ══════════════════════════════════════════════════════════
-// TEST MODE — type testResult('SQ') in browser console
-// Options: 'SQ', 'EN', 'KL', 'KO', 'AF'
-// Remove this function before final production launch
-// ══════════════════════════════════════════════════════════
-function testResult(code) {
-  var validCodes = ['SQ', 'EN', 'KL', 'KO', 'AF'];
-  if (validCodes.indexOf(code) === -1) {
-    console.log('Invalid code. Use: SQ, EN, KL, KO, AF');
-    return;
-  }
-  // Override calculateScores to force the selected archetype
-  var origCalc = calculateScores;
-  calculateScores = function() {
-    var scores = { SQ: 8, EN: 8, KL: 8, KO: 8, AF: 8 };
-    scores[code] = 42;
-    return scores;
-  };
-  document.getElementById('progressWrap').style.display = 'none';
-  showResult();
-  // Restore original
-  calculateScores = origCalc;
-  console.log('Showing result for: ' + ARCHETYPES[code].name);
 }
 </script>
 
